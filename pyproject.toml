@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pacman-apt-wrapper"
+version = "0.1.0"
+description = "Pacman-style wrapper for apt-get/apt-cache/dpkg-query"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Pacman Apt Wrapper Contributors" }]
+
+[project.scripts]
+pacman-apt = "pacman_apt.cli:main"
+pacman = "pacman_apt.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
