@@ -54,15 +54,10 @@ See `docs/security.md` for the threat model and assumptions.
 (Exact versions may vary; see `docs/compatibility.md`.)
 
 ## Installation
-### From source (recommended for development)
+### Editable install (recommended for development)
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e .
-```
-
-### Editable install (short form)
-```bash
 pip install -e .
 ```
 
