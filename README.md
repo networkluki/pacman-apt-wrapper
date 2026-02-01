@@ -54,16 +54,10 @@ See `docs/security.md` for the threat model and assumptions.
 (Exact versions may vary; see `docs/compatibility.md`.)
 
 ## Installation
-### Editable install (recommended for development)
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
-```
-
-### Manual (single-file)
-```bash
-sudo install -m 0755 pacman /usr/local/bin/pacman
 ```
 
 ## Usage
