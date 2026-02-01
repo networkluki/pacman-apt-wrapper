@@ -53,7 +53,6 @@ See `docs/security.md` for the threat model and assumptions.
 
 (Exact versions may vary; see `docs/compatibility.md`.)
 
-## Installation
 ## Usage
 ```bash
 pacman -Ss nginx
