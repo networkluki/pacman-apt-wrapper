@@ -54,12 +54,6 @@ See `docs/security.md` for the threat model and assumptions.
 (Exact versions may vary; see `docs/compatibility.md`.)
 
 ## Installation
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
 ## Usage
 ```bash
 pacman -Ss nginx
