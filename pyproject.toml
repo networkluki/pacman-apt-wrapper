@@ -15,6 +15,9 @@ authors = [{ name = "Pacman Apt Wrapper Contributors" }]
 pacman-apt = "pacman_apt.cli:main"
 pacman = "pacman_apt.cli:main"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]

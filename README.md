@@ -54,9 +54,25 @@ See `docs/security.md` for the threat model and assumptions.
 (Exact versions may vary; see `docs/compatibility.md`.)
 
 ## Installation
-### Editable install (recommended for development)
+### Install with pip
+From a local checkout:
 ```bash
-pip install -e .
+python -m pip install .
+```
+
+For development, use an editable install:
+```bash
+python -m pip install -e .
+```
+
+Both pip installs create these commands in the active Python environment:
+- `pacman`
+- `pacman-apt`
+
+If your Python environment's script directory is not on `PATH`, run the module
+entrypoint directly instead:
+```bash
+python -m pacman_apt.cli --help
 ```
 
 ### Manual (single-file)
