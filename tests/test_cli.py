@@ -6,7 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-import pacman_apt.cli as cli
+import pacman_apt.cli as cli  # noqa: E402
 
 
 def test_split_args_separates_flags_and_args():
