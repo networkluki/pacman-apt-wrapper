@@ -1,8 +1,8 @@
-# pacman-apt (A pacman-like CLI compatibility layer for Debian/Ubuntu)
+# pacman-apt (A pacman-like CLI compatibility layer for linux systems)
 
 ## Abstract
 `pacman-apt` provides a small subset of Arch Linux `pacman`-style commands on
-Debian/Ubuntu by translating them into native `apt-get` / `apt-cache` / `dpkg-query`
+linux system by translating them into native `apt-get` / `apt-cache` / `dpkg-query`
 invocations. The goal is consistent operator muscle-memory across distributions,
 not to replace the underlying package manager.
 
@@ -15,7 +15,7 @@ This project reduces that friction by offering a minimal, explicit translation l
 
 ## Scope
 ### Goals
-- Provide a pacman-like UX for common workflows on Debian/Ubuntu:
+- Provide a pacman-like UX for common workflows on linux system:
   - `-Syu`, `-S`, `-R`, `-Rns`, `-Ss`, `-Qi`, `-Q`
 - Prefer stable, script-friendly Debian tooling (`apt-get`, `apt-cache`, `dpkg-query`)
 - Transparent execution: print commands before running them
@@ -26,9 +26,9 @@ This project reduces that friction by offering a minimal, explicit translation l
 - Not intended for Arch Linux (where `pacman` already exists)
 
 ## Design Overview
-`pacman-apt` parses a small flag subset and maps it to Debian tooling:
+`pacman-apt` parses a small flag subset and maps it to linux tooling:
 
-| pacman-style | Debian/Ubuntu backend |
+| pacman-style | linux backend |
 |---|---|
 | `pacman -Syu` | `apt-get update && apt-get dist-upgrade -y` |
 | `pacman -S <pkg...>` | `apt-get install -y <pkg...>` |
