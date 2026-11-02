@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,8 +8,23 @@ version = "0.1.0"
 description = "Pacman-style wrapper for apt-get/apt-cache/dpkg-query"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Pacman Apt Wrapper Contributors" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Software Distribution",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.urls]
+Homepage = "https://github.com/networkluki/pacman-apt-wrapper"
+Source = "https://github.com/networkluki/pacman-apt-wrapper"
+Issues = "https://github.com/networkluki/pacman-apt-wrapper/issues"
 
 [project.scripts]
 pacman-apt = "pacman_apt.cli:main"
