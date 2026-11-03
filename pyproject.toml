@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "Pacman Apt Wrapper Contributors" }]
+authors = [{ name = "networkluki" }]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
@@ -28,7 +28,6 @@ Issues = "https://github.com/networkluki/pacman-apt-wrapper/issues"
 
 [project.scripts]
 pacman-apt = "pacman_apt.cli:main"
-pacman = "pacman_apt.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
