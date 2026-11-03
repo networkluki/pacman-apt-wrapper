@@ -36,7 +36,7 @@ This project reduces that friction by offering a minimal, explicit translation l
 | `pacman -Rns <pkg...>` | `apt-get purge -y <pkg...> && apt-get autoremove --purge -y` |
 | `pacman -Ss <query>` | `apt-cache search <query>` |
 | `pacman -Qi <pkg>` | `apt-cache show <pkg>` (metadata; see Limitations) |
-| `pacman -Q` | `dpkg-query -W -f='${binary:Package}\t${Version}\n'` |
+| `pacman -Q` | `dpkg-query -W -f='\${binary:Package}\t\${Version}\n'` |
 
 For design rationale, see `docs/design.md`.
 
@@ -84,4 +84,117 @@ python -m pacman_apt.cli --help
 ### Manual (single-file)
 ```bash
 sudo install -m 0755 pacman /usr/local/bin/pacman
+```
+
+## Quick setup and pacman command examples
+
+### Recommended installation with pipx
+
+```bash
+sudo apt update
+sudo apt install -y pipx
+pipx ensurepath
+exec "$SHELL" -l
+pipx install pacman-apt-wrapper
+```
+
+Verify the installation:
+
+```bash
+pipx list
+command -v pacman
+command -v pacman-apt
+pacman --help
+pacman-apt --help
+```
+
+### Alternative installation with pip in a virtual environment
+
+Create the virtual environment:
+
+```bash
+python3 -m venv ~/.venvs/pacman-apt-wrapper
+source ~/.venvs/pacman-apt-wrapper/bin/activate
+```
+
+Install the package:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install pacman-apt-wrapper
+```
+
+Verify:
+
+```bash
+pacman --help
+pacman-apt --help
+command -v pacman
+command -v pacman-apt
+```
+
+### Uninstall or inspect the pipx installation
+
+```bash
+pipx list
+pipx uninstall pacman-apt-wrapper
+```
+
+### Uninstall when installed with pip
+
+If the virtual environment is active:
+
+```bash
+python -m pip uninstall pacman-apt-wrapper
+```
+
+If you also want to remove the dedicated virtual environment completely:
+
+```bash
+deactivate 2>/dev/null || true
+rm -rf ~/.venvs/pacman-apt-wrapper
+```
+
+### pacman-style commands
+
+Update package lists and upgrade the system:
+
+```bash
+pacman -Syu
+```
+
+Install packages:
+
+```bash
+pacman -S htop curl
+```
+
+Remove a package:
+
+```bash
+pacman -R htop
+```
+
+Purge a package and autoremove unused dependencies:
+
+```bash
+pacman -Rns htop
+```
+
+Search for packages:
+
+```bash
+pacman -Ss nginx
+```
+
+Show package metadata:
+
+```bash
+pacman -Qi nginx
+```
+
+List installed packages:
+
+```bash
+pacman -Q
 ```
