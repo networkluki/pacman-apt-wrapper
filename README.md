@@ -134,6 +134,21 @@ pipx list
 pipx uninstall pacman-apt-wrapper
 ```
 
+### Uninstall when installed with pip
+
+If the virtual environment is active:
+
+```bash
+python -m pip uninstall pacman-apt-wrapper
+```
+
+If you also want to remove the dedicated virtual environment completely:
+
+```bash
+deactivate 2>/dev/null || true
+rm -rf ~/.venvs/pacman-apt-wrapper
+```
+
 ### pacman-style commands
 
 Update package lists and upgrade the system:
