@@ -65,9 +65,15 @@ For development, use an editable install:
 python -m pip install -e .
 ```
 
-Both pip installs create these commands in the active Python environment:
-- `pacman`
+Both pip installs create one command in the active Python environment:
 - `pacman-apt`
+
+The pip package deliberately does not install a command named `pacman`, so it
+cannot shadow a real `pacman` binary. For muscle memory on Debian/Ubuntu, opt in
+with a shell alias:
+```bash
+alias pacman=pacman-apt
+```
 
 If your Python environment's script directory is not on `PATH`, run the module
 entrypoint directly instead:
